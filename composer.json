@@ -1,0 +1,17 @@
+{
+    "name": "scherersoftware/cake-wiki",
+    "description": "Simple Wiki for CakePHP apps",
+    "license": "MIT",
+    "type": "cakephp-plugin",
+    "require": {
+        "cakephp/cakephp": "~3.0",
+        "codekanzlei/cake-cktools": "*",
+        "codekanzlei/cake-frontend-bridge": "*",
+        "codekanzlei/cake-attachments": "*"
+    },
+    "autoload": {
+        "psr-4": {
+        "Scherersoftware\\Cms\\": "src"
+        }
+    }
+}
