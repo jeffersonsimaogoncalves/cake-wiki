@@ -7,11 +7,12 @@
         "cakephp/cakephp": "~3.0",
         "codekanzlei/cake-cktools": "*",
         "codekanzlei/cake-frontend-bridge": "*",
-        "codekanzlei/cake-attachments": "*"
+        "codekanzlei/cake-attachments": "*",
+        "codekanzlei/cake-model-history": "*"
     },
     "autoload": {
         "psr-4": {
-        "scherersoftware\\Wiki\\": "src"
+            "Scherersoftware\\Wiki\\": "src"
         }
     }
 }

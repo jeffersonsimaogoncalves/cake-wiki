@@ -1,0 +1,6 @@
+<?php
+// @codingStandardsIgnoreStart
+return [
+	'tables' => [
+	]
+];
