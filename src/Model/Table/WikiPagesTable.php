@@ -2,6 +2,7 @@
 namespace Scherersoftware\Wiki\Model\Table;
 
 use Scherersoftware\Wiki\Model\Entity\WikiPage;
+use Cake\Core\Configure;
 use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
@@ -27,13 +28,15 @@ class WikiPagesTable extends Table
         $this->addBehavior('Timestamp');
         $this->addBehavior('Tree');
         $this->addBehavior('Attachments.Attachments');
-        $this->addBehavior('ModelHistory.Historizable');
+        if (Configure::read('Wiki.useModelHistory')) {
+            $this->addBehavior('ModelHistory.Historizable');
+        }
         $this->belongsTo('ParentWikiPages', [
-            'className' => 'WikiPages',
+            'className' => 'Scherersoftware/Wiki.WikiPages',
             'foreignKey' => 'parent_id'
         ]);
         $this->hasMany('ChildWikiPages', [
-            'className' => 'WikiPages',
+            'className' => 'Scherersoftware/Wiki.WikiPages',
             'foreignKey' => 'parent_id'
         ]);
     }

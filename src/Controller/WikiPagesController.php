@@ -2,6 +2,7 @@
 namespace Scherersoftware\Wiki\Controller;
 
 use App\Controller\AppController;
+use Cake\Core\Configure;
 use Cake\Event\Event;
 
 /**
@@ -12,11 +13,14 @@ use Cake\Event\Event;
 class WikiPagesController extends AppController
 {
 
+    /**
+     * Initialize
+     *
+     * @return void
+     */
     public function initialize()
     {
         $this->loadModel('scherersoftware/Wiki.WikiPages');
-        debug($this->WikiPages);exit;
-        
         parent::initialize();
     }
 
@@ -29,9 +33,11 @@ class WikiPagesController extends AppController
     public function beforeFilter(Event $event)
     {
         $userId = $this->Auth->user('id');
-        $this->WikiPages->setModelHistoryUserIdCallback(function () use ($userId) {
-            return $userId;
-        });
+        if (Configure::read('Wiki.useModelHistory')) {
+            $this->WikiPages->setModelHistoryUserIdCallback(function () use ($userId) {
+                return $userId;
+            });
+        }
         parent::beforeFilter($event);
     }
 
@@ -50,7 +56,9 @@ class WikiPagesController extends AppController
             ]
         ])->hydrate(true)->toArray();
 
-        $recentChanges = $this->WikiPages->getRecentChanges(15);
+        if (Configure::read('Wiki.useModelHistory')) {
+            $recentChanges = $this->WikiPages->getRecentChanges(15);
+        }
         $this->set(compact('pageTree', 'recentChanges'));
     }
 
