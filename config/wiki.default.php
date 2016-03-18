@@ -1,6 +1,10 @@
 <?php
 return [
     'Wiki' => [
-        'useModelHistory' => false
+        'useModelHistory' => false,
+        'Administration' => [
+            'layout' => 'default',
+            'helpers' => []
+        ],
     ]
 ];
