@@ -1,11 +1,11 @@
 <?php
 $this->Html->script([
-    'vendor/bootstrap-markdown-editor.js',
-    '//cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ace.js',
-    '//cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js'
+    '/scherersoftware/wiki/js/vendor/bootstrap-markdown-editor.js',
+    '//cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js',
+    '//cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js'
 ], ['block' => 'script']);
 $this->Html->css([
-    'vendor/bootstrap-markdown-editor.css'
+    '/scherersoftware/wiki/css/vendor/bootstrap-markdown-editor.css'
 ], ['block' => 'css']);
 
 ?>
