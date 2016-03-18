@@ -29,7 +29,7 @@ class WikiPagesTable extends Table
         $this->addBehavior('Tree');
         $this->addBehavior('Attachments.Attachments');
         if (Configure::read('Wiki.useModelHistory')) {
-            $this->addBehavior('ModelHistory.Historizable');
+            $this->addBehavior('ModelHistory.Historizable', Configure::read('Wiki.modelHistoryOptions'));
         }
         $this->belongsTo('ParentWikiPages', [
             'className' => 'Scherersoftware/Wiki.WikiPages',
@@ -107,26 +107,22 @@ class WikiPagesTable extends Table
      */
     public function getRecentChanges($limit = 15)
     {
-        $this->ModelHistory->belongsTo('WikiPages', [
+        $this->ModelHistory->belongsTo($this->registryAlias(), [
             'foreignKey' => 'foreign_key'
         ]);
-        return $this->ModelHistory->find()
+        $q = $this->ModelHistory->find()
             ->select([
                 'ModelHistory.id',
                 'ModelHistory.user_id',
                 'ModelHistory.action',
                 'ModelHistory.created',
-                'Users.id',
-                'Users.forename',
-                'Users.surname',
                 'WikiPages.id',
-                'WikiPages.title',
+                'WikiPages.title'
             ])
-            ->where([
-                'model' => 'WikiPages'
-            ])
+            ->select($this->ModelHistory->Users)
             ->contain(['Users', 'WikiPages'])
             ->order(['ModelHistory.created DESC'])
             ->limit(15);
+        return $q;
     }
 }
