@@ -8,7 +8,7 @@
 
 
 <div class="wikiPages form">
-    <?= $this->Form->create($wikiPage, ['horizontal' => true, 'novalidate']); ?>
+    <?= $this->Form->create($wikiPage, ['align' => 'horizontal', 'novalidate']); ?>
     <fieldset>
         <?= $this->element('../WikiPages/form') ?>
     </fieldset>

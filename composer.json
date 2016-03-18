@@ -8,7 +8,8 @@
         "codekanzlei/cake-cktools": "*",
         "codekanzlei/cake-frontend-bridge": "*",
         "codekanzlei/cake-attachments": "*",
-        "codekanzlei/cake-model-history": "*"
+        "codekanzlei/cake-model-history": "*",
+        "michelf/php-markdown": "^1.5"
     },
     "autoload": {
         "psr-4": {
