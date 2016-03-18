@@ -20,7 +20,10 @@ $this->Html->css([
     echo $this->Form->input('title', ['label' => __d('wiki', 'wiki_page.title')]);
     echo $this->Attachments->attachmentsArea($wikiPage, [
         'label' => __d('wiki', 'wiki_page.attachments'),
-        'formFieldName' => 'attachment_uploads'
+        'formFieldName' => 'attachment_uploads',
+        'additionalButtons' => function ($attachment) {
+            return '<a class="btn btn-default btn-xs insert-image-btn" title="' . __d('wiki', 'wiki_pages.insert_image') . '" data-url="' . $attachment->downloadUrl() . '" data-filename="' . $attachment->filename . '"><i class="fa fa-fw fa-file-image-o"></i></a>';
+        }
     ]);
 ?>
 <div id="wiki-content">
