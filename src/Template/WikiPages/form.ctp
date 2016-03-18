@@ -12,14 +12,14 @@ $this->Html->css([
 
 <?php
     echo $this->Form->input('parent_id', [
-        'label' => 'Parent',
+        'label' => __d('wiki', 'wiki_page.parent_id'),
         'options' => $parentWikiPages,
         'escape' => false,
         'empty' => '-'
     ]);
-    echo $this->Form->input('title', ['label' => 'Titel']);
+    echo $this->Form->input('title', ['label' => __d('wiki', 'wiki_page.title')]);
     echo $this->Attachments->attachmentsArea($wikiPage, [
-        'label' => 'Dateien',
+        'label' => __d('wiki', 'wiki_page.attachments'),
         'formFieldName' => 'attachment_uploads'
     ]);
 ?>

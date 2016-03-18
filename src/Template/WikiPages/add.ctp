@@ -1,6 +1,6 @@
 
 <h1 class="page-header">
-    <?= __('wiki_pages.add') ?>
+    <?= __d('wiki', 'wiki_pages.add') ?>
     <div class="pull-right">
         <?= $this->ListFilter->backToListButton() ?>
     </div>

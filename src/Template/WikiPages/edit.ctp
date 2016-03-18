@@ -1,8 +1,8 @@
 <h1 class="page-header">
-    Bearbeiten
+    <?= __d('wiki', 'wiki_pages.edit') ?>
     <div class="pull-right">
         <?= $this->ListFilter->backToListButton() ?>
-        <?= $this->CkTools->viewButton($wikiPage, ['title' => 'Seite anzeigen', 'url' => $wikiPage->url]) ?>
+        <?= $this->CkTools->viewButton($wikiPage, ['url' => $wikiPage->url]) ?>
     </div>
 </h1>
 

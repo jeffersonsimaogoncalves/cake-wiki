@@ -52,9 +52,8 @@ class WikiPagesController extends AppController
             'fields' => ['id', 'parent_id', 'title'],
             'order' => ['sort ASC'],
             'conditions' => [
-                'status' => 'active'
             ]
-        ])->hydrate(true)->toArray();
+        ])->toArray();
 
         if (Configure::read('Wiki.useModelHistory')) {
             $recentChanges = $this->WikiPages->getRecentChanges(15);

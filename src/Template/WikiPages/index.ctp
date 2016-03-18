@@ -4,20 +4,20 @@ use Cake\Core\Configure;
 $this->assign('title', 'Wiki');
 ?>
 <h1 class="page-header">
-    Wiki
+    <?= __d('wiki', 'wiki_pages.index') ?>
     <div class="pull-right">
-        <?= $this->CkTools->addButton('Neue Seite anlegen') ?>
+        <?= $this->CkTools->addButton() ?>
     </div>
 </h1>
 
 <div class="page-tree">
-<?= $this->CkTools->nestedList($pageTree, '<a href="{{url}}">{{title}}</a>'); ?>
+    <?= $this->CkTools->nestedList($pageTree, '<a href="{{url}}">{{title}}</a>'); ?>
 </div>
 
 
 <?php if (Configure::read('Wiki.useModelHistory')): ?>
     <hr>
-    <h4>Letzte Änderungen</h4>
+    <h4><?= __d('wiki', 'wiki_pages.recent_changes') ?></h4>
     <ul>
         <?php foreach($recentChanges as $change): ?>
             <li>
