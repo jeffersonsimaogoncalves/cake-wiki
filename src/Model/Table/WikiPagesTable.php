@@ -56,7 +56,7 @@ class WikiPagesTable extends Table
             ->allowEmpty('parent_id')
             ->add('sort', 'valid', ['rule' => 'numeric'])
             ->allowEmpty('sort')
-            ->notBlank('title')
+            ->notEmpty('title')
             ->allowEmpty('content');
 
         return $validator;
