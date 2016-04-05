@@ -1,0 +1,47 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2016-04-05 16:38+0200\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: /Users/dirk/Sites/uam_unidb2//src/Controller/WikiPagesController.php:100;126
+msgid "forms.data_saved"
+msgstr ""
+
+#: /Users/dirk/Sites/uam_unidb2//src/Controller/WikiPagesController.php:103;129
+msgid "forms.data_not_saved"
+msgstr ""
+
+#: /Users/dirk/Sites/uam_unidb2//src/Controller/WikiPagesController.php:149
+msgid "forms.data_deleted"
+msgstr ""
+
+#: /Users/dirk/Sites/uam_unidb2//src/Controller/WikiPagesController.php:151
+msgid "forms.data_not_deleted"
+msgstr ""
+
+#: /Users/dirk/Sites/uam_unidb2//src/Template/WikiPages/add.ctp:16
+#: /Users/dirk/Sites/uam_unidb2//src/Template/WikiPages/edit.ctp:16
+msgid "forms.save"
+msgstr ""
+
+#: /Users/dirk/Sites/uam_unidb2//src/Template/WikiPages/add.ctp:17
+#: /Users/dirk/Sites/uam_unidb2//src/Template/WikiPages/edit.ctp:17
+msgid "or"
+msgstr ""
+
+#: /Users/dirk/Sites/uam_unidb2//src/Template/WikiPages/add.ctp:18
+#: /Users/dirk/Sites/uam_unidb2//src/Template/WikiPages/edit.ctp:18
+msgid "forms.back_to_list"
+msgstr ""
+
