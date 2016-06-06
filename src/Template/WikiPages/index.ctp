@@ -10,6 +10,18 @@ $this->assign('title', 'Wiki');
     </div>
 </h1>
 
+    <?= $this->ListFilter->openForm(); ?>
+    <?= $this->ListFilter->filterWidget('WikiPages.fulltext', [
+        'inputOptions' => [
+            'label' => false,
+            'placeholder' => __d('wiki', 'wiki_pages.search'),
+            'prepend' => '<i class="fa fa-search"></i>',
+            'append' => $this->ListFilter->resetButton(null, ['class' => ''])
+        ]
+    ]) ?>
+    <?= $this->ListFilter->closeForm(false, false); ?>
+
+
 <div class="page-tree">
     <?= $this->CkTools->nestedList($pageTree, '<a href="{{url}}">{{title}}</a>'); ?>
 </div>

@@ -13,6 +13,31 @@ class WikiPagesController extends AppController
 {
 
     /**
+     * Return the ListFilter config for the given action.
+     *
+     * @param string $action Controller action name
+     * @return array
+     */
+    public function getListFilters($action)
+    {
+        $filters = [];
+        if ($action == 'index') {
+            $filters = [
+                'fields' => [
+                    'WikiPages.fulltext' => [
+                        'searchType' => 'fulltext',
+                        'searchFields' => [
+                            'WikiPages.title',
+                            'WikiPages.content',
+                        ]
+                    ],
+                ]
+            ];
+        }
+        return $filters;
+    }
+
+    /**
      * Initialize
      *
      * @return void
@@ -47,17 +72,23 @@ class WikiPagesController extends AppController
      */
     public function index()
     {
+        $conditions = [];
+        $searchActive = false;
+        if (isset($this->paginate['conditions'])) {
+            $searchActive = true;
+            $conditions = $this->paginate['conditions'];
+        }
+        
         $pageTree = $this->WikiPages->find('threaded', [
             'fields' => ['id', 'parent_id', 'title'],
             'order' => ['sort ASC'],
-            'conditions' => [
-            ]
+            'conditions' => $conditions
         ])->toArray();
 
         if (Configure::read('Wiki.useModelHistory')) {
             $recentChanges = $this->WikiPages->getRecentChanges(15);
         }
-        $this->set(compact('pageTree', 'recentChanges'));
+        $this->set(compact('pageTree', 'recentChanges', 'searchActive'));
     }
 
     /**

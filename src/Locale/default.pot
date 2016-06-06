@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2016-04-05 16:38+0200\n"
+"POT-Creation-Date: 2016-06-06 12:35+0200\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -14,34 +14,34 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: /Users/dirk/Sites/uam_unidb2//src/Controller/WikiPagesController.php:100;126
+#: Controller/WikiPagesController.php:131;157
 msgid "forms.data_saved"
 msgstr ""
 
-#: /Users/dirk/Sites/uam_unidb2//src/Controller/WikiPagesController.php:103;129
+#: Controller/WikiPagesController.php:134;160
 msgid "forms.data_not_saved"
 msgstr ""
 
-#: /Users/dirk/Sites/uam_unidb2//src/Controller/WikiPagesController.php:149
+#: Controller/WikiPagesController.php:180
 msgid "forms.data_deleted"
 msgstr ""
 
-#: /Users/dirk/Sites/uam_unidb2//src/Controller/WikiPagesController.php:151
+#: Controller/WikiPagesController.php:182
 msgid "forms.data_not_deleted"
 msgstr ""
 
-#: /Users/dirk/Sites/uam_unidb2//src/Template/WikiPages/add.ctp:16
-#: /Users/dirk/Sites/uam_unidb2//src/Template/WikiPages/edit.ctp:16
+#: Template/WikiPages/add.ctp:16
+#: Template/WikiPages/edit.ctp:16
 msgid "forms.save"
 msgstr ""
 
-#: /Users/dirk/Sites/uam_unidb2//src/Template/WikiPages/add.ctp:17
-#: /Users/dirk/Sites/uam_unidb2//src/Template/WikiPages/edit.ctp:17
+#: Template/WikiPages/add.ctp:17
+#: Template/WikiPages/edit.ctp:17
 msgid "or"
 msgstr ""
 
-#: /Users/dirk/Sites/uam_unidb2//src/Template/WikiPages/add.ctp:18
-#: /Users/dirk/Sites/uam_unidb2//src/Template/WikiPages/edit.ctp:18
+#: Template/WikiPages/add.ctp:18
+#: Template/WikiPages/edit.ctp:18
 msgid "forms.back_to_list"
 msgstr ""
 
