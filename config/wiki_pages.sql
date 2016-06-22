@@ -6,7 +6,7 @@ CREATE TABLE `wiki_pages` (
   `sort` int(3) unsigned DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL,
   `content` mediumtext,
-  `status` int(3) unsigned NOT NULL DEFAULT '1',
+  `status` varchar(255) NOT NULL DEFAULT 'active',
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)

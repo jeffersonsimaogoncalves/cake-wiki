@@ -1,50 +1,58 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2016-06-06 12:35+0200\n"
-"PO-Revision-Date: 2016-06-06 12:37+0100\n"
+"POT-Creation-Date: 2016-06-22 16:47+0200\n"
+"PO-Revision-Date: 2016-06-22 16:47+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.6\n"
+"X-Generator: Poedit 1.8.8\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: Template/WikiPages/add.ctp:3
+#: /Users/cleptric/Sites/cakephp-app-template//Controller/WikiPagesController.php:115;166
+msgid "wiki_pages.page_does_not_exist"
+msgstr "Page does not exists anymore"
+
+#: /Users/cleptric/Sites/cakephp-app-template//Template/WikiPages/add.ctp:3
 msgid "wiki_pages.add"
 msgstr "Add Page"
 
-#: Template/WikiPages/edit.ctp:2
+#: /Users/cleptric/Sites/cakephp-app-template//Template/WikiPages/edit.ctp:2
 msgid "wiki_pages.edit"
 msgstr "Edit Page"
 
-#: Template/WikiPages/form.ctp:15
+#: /Users/cleptric/Sites/cakephp-app-template//Template/WikiPages/form.ctp:15
 msgid "wiki_page.parent_id"
 msgstr "Parent Page"
 
-#: Template/WikiPages/form.ctp:20
+#: /Users/cleptric/Sites/cakephp-app-template//Template/WikiPages/form.ctp:20
 msgid "wiki_page.title"
 msgstr "Title"
 
-#: Template/WikiPages/form.ctp:22
+#: /Users/cleptric/Sites/cakephp-app-template//Template/WikiPages/form.ctp:22
 msgid "wiki_page.attachments"
 msgstr "Attachments"
 
-#: Template/WikiPages/form.ctp:25
+#: /Users/cleptric/Sites/cakephp-app-template//Template/WikiPages/form.ctp:25
 msgid "wiki_pages.insert_image"
 msgstr "Insert Image"
 
-#: Template/WikiPages/index.ctp:7
+#: /Users/cleptric/Sites/cakephp-app-template//Template/WikiPages/index.ctp:7
 msgid "wiki_pages.index"
 msgstr "Wiki"
 
-#: Template/WikiPages/index.ctp:17
+#: /Users/cleptric/Sites/cakephp-app-template//Template/WikiPages/index.ctp:17
 msgid "wiki_pages.search"
 msgstr "Search"
 
-#: Template/WikiPages/index.ctp:32
+#: /Users/cleptric/Sites/cakephp-app-template//Template/WikiPages/index.ctp:25
+msgid "wiki_pages.nothing_found"
+msgstr "No results"
+
+#: /Users/cleptric/Sites/cakephp-app-template//Template/WikiPages/index.ctp:35
 msgid "wiki_pages.recent_changes"
 msgstr "Recent Changes"

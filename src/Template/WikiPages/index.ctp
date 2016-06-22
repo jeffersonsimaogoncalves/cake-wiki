@@ -21,10 +21,13 @@ $this->assign('title', 'Wiki');
     ]) ?>
     <?= $this->ListFilter->closeForm(false, false); ?>
 
-
-<div class="page-tree">
-    <?= $this->CkTools->nestedList($pageTree, '<a href="{{url}}">{{title}}</a>'); ?>
-</div>
+<?php if(empty($pageTree)) : ?>
+    <div class="alert alert-info" role="alert"><?= __d('wiki', 'wiki_pages.nothing_found') ?></div>
+<?php else: ?>
+    <div class="page-tree">
+        <?= $this->CkTools->nestedList($pageTree, '<a href="{{url}}">{{title}}</a>'); ?>
+    </div>
+<?php endif; ?>
 
 
 <?php if (Configure::read('Wiki.useModelHistory')): ?>

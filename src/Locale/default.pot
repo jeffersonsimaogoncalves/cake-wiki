@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2016-06-06 12:35+0200\n"
+"POT-Creation-Date: 2016-06-22 14:46+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -14,34 +14,34 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: Controller/WikiPagesController.php:131;157
+#: /Users/cleptric/Sites/cakephp-app-template//Controller/WikiPagesController.php:142;173
 msgid "forms.data_saved"
 msgstr ""
 
-#: Controller/WikiPagesController.php:134;160
+#: /Users/cleptric/Sites/cakephp-app-template//Controller/WikiPagesController.php:145;176
 msgid "forms.data_not_saved"
 msgstr ""
 
-#: Controller/WikiPagesController.php:180
+#: /Users/cleptric/Sites/cakephp-app-template//Controller/WikiPagesController.php:196
 msgid "forms.data_deleted"
 msgstr ""
 
-#: Controller/WikiPagesController.php:182
+#: /Users/cleptric/Sites/cakephp-app-template//Controller/WikiPagesController.php:198
 msgid "forms.data_not_deleted"
 msgstr ""
 
-#: Template/WikiPages/add.ctp:16
-#: Template/WikiPages/edit.ctp:16
+#: /Users/cleptric/Sites/cakephp-app-template//Template/WikiPages/add.ctp:16
+#: /Users/cleptric/Sites/cakephp-app-template//Template/WikiPages/edit.ctp:16
 msgid "forms.save"
 msgstr ""
 
-#: Template/WikiPages/add.ctp:17
-#: Template/WikiPages/edit.ctp:17
+#: /Users/cleptric/Sites/cakephp-app-template//Template/WikiPages/add.ctp:17
+#: /Users/cleptric/Sites/cakephp-app-template//Template/WikiPages/edit.ctp:17
 msgid "or"
 msgstr ""
 
-#: Template/WikiPages/add.ctp:18
-#: Template/WikiPages/edit.ctp:18
+#: /Users/cleptric/Sites/cakephp-app-template//Template/WikiPages/add.ctp:18
+#: /Users/cleptric/Sites/cakephp-app-template//Template/WikiPages/edit.ctp:18
 msgid "forms.back_to_list"
 msgstr ""
 

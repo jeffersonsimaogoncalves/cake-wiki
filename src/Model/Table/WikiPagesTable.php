@@ -1,12 +1,12 @@
 <?php
 namespace Scherersoftware\Wiki\Model\Table;
 
-use Scherersoftware\Wiki\Model\Entity\WikiPage;
 use Cake\Core\Configure;
 use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
+use Scherersoftware\Wiki\Model\Entity\WikiPage;
 
 /**
  * WikiPages Model
@@ -122,6 +122,7 @@ class WikiPagesTable extends Table
             ->select($this->ModelHistory->Users)
             ->contain(['Users', 'WikiPages'])
             ->order(['ModelHistory.created DESC'])
+            ->where(['WikiPages.status IS NOT' => WikiPage::DELETED])
             ->limit(15);
         return $q;
     }

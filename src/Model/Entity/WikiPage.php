@@ -11,6 +11,9 @@ use Cake\Utility\Inflector;
 class WikiPage extends Entity
 {
 
+    const ACTIVE = 'active';
+    const DELETED = 'deleted';
+
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
      *

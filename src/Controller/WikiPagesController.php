@@ -3,6 +3,8 @@ namespace Scherersoftware\Wiki\Controller;
 
 use Cake\Core\Configure;
 use Cake\Event\Event;
+use Cake\Utility\Hash;
+use Scherersoftware\Wiki\Model\Entity\WikiPage;
 
 /**
  * WikiPages Controller
@@ -72,11 +74,13 @@ class WikiPagesController extends AppController
      */
     public function index()
     {
-        $conditions = [];
+        $conditions = [
+            'status' => WikiPage::ACTIVE
+        ];
         $searchActive = false;
         if (isset($this->paginate['conditions'])) {
             $searchActive = true;
-            $conditions = $this->paginate['conditions'];
+            $conditions = Hash::merge($this->paginate['conditions'], $conditions);
         }
         
         $pageTree = $this->WikiPages->find('threaded', [
@@ -102,8 +106,15 @@ class WikiPagesController extends AppController
     {
         $this->WikiPages->recover();
         $wikiPage = $this->WikiPages->get($id, [
-            'contain' => ['ParentWikiPages', 'ChildWikiPages', 'Attachments']
+            'contain' => [
+                'ParentWikiPages', 'ChildWikiPages', 'Attachments'
+            ]
         ]);
+
+        if ($wikiPage->status == WikiPage::DELETED) {
+            $this->Flash->warning(__d('wiki', 'wiki_pages.page_does_not_exist'));
+            return $this->redirect(['action' => 'index']);
+        }
 
         $treePath = $this->WikiPages->find('path', [
             'for' => $id
@@ -151,6 +162,11 @@ class WikiPagesController extends AppController
             'contain' => ['Attachments']
         ]);
 
+        if ($wikiPage->status == WikiPage::DELETED) {
+            $this->Flash->warning(__d('wiki', 'wiki_pages.page_does_not_exist'));
+            return $this->redirect(['action' => 'index']);
+        }
+
         if ($this->request->is(['patch', 'post', 'put'])) {
             $wikiPage = $this->WikiPages->patchEntity($wikiPage, $this->request->data);
             if ($this->WikiPages->save($wikiPage)) {
@@ -175,7 +191,7 @@ class WikiPagesController extends AppController
     {
         $this->request->allowMethod(['post', 'delete']);
         $wikiPage = $this->WikiPages->get($id);
-        $wikiPage->status = 'deleted';
+        $wikiPage->status = WikiPage::DELETED;
         if ($this->WikiPages->save($wikiPage)) {
             $this->Flash->success(__('forms.data_deleted'));
         } else {
