@@ -19,12 +19,10 @@ for icons in the page edit menu
 
 ## Installation
 
-####1. require the plugin in your `composer.json`
+####1. require the plugin via composer
 
 ```
-"require": {
-	"scherersoftware/cake-wiki": "dev-master"
-}
+$ composer require scherersoftware/cake-wiki
 ```
 
 #### 2. Include the plugin using composer
