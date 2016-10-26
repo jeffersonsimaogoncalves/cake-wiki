@@ -19,7 +19,7 @@ $this->assign('title', 'Wiki');
     ]) ?>
     <?= $this->ListFilter->closeForm(false, false); ?>
 
-<?php if(empty($pageTree)) : ?>
+<?php if (empty($pageTree)) : ?>
     <div class="alert alert-info" role="alert"><?= __d('wiki', 'wiki_pages.nothing_found') ?></div>
 <?php else: ?>
     <div class="page-tree">
