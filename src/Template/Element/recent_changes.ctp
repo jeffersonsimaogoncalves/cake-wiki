@@ -1,7 +1,7 @@
 <?php
 use Cake\Core\Configure;
 ?>
-<?php if (Configure::read('Wiki.useModelHistory')): ?>
+<?php if (Configure::read('Wiki.useModelHistory') && $recentChanges->count() > 0): ?>
     <hr>
     <h4><?= __d('wiki', 'wiki_pages.recent_changes') ?></h4>
     <ul>
