@@ -83,7 +83,8 @@ class WikiPagesTable extends Table
     public function getTreeList()
     {
         $parentWikiPages = $this->ParentWikiPages->find('treeList', [
-            'spacer' => '~'
+            'spacer' => '~',
+            'order' => ['title ASC'],
         ])->toArray();
         foreach ($parentWikiPages as $pageId => $title) {
             if (strpos($title, '~') !== false) {
@@ -102,10 +103,11 @@ class WikiPagesTable extends Table
     /**
      * Find a list of recent changes
      *
-     * @param string $limit How many changes to return
+     * @param string $wikiPageId optional scope on a specific wiki page
+     * @param int $limit How many changes to return
      * @return Query
      */
-    public function getRecentChanges($limit = 15)
+    public function getRecentChanges($wikiPageId = null, $limit = 15)
     {
         $this->ModelHistory->belongsTo($this->registryAlias(), [
             'foreignKey' => 'foreign_key'
@@ -123,7 +125,12 @@ class WikiPagesTable extends Table
             ->contain(['Users', 'WikiPages'])
             ->order(['ModelHistory.created DESC'])
             ->where(['WikiPages.status IS NOT' => WikiPage::DELETED])
-            ->limit(15);
+            ->limit($limit);
+        if (!empty($wikiPageId)) {
+            $q->where([
+                'WikiPages.id' => $wikiPageId,
+            ]);
+        }
         return $q;
     }
 }

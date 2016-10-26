@@ -37,3 +37,4 @@ $content = str_replace('<table>', '<table class="table">', $content);
         ?>
     </div>
 </div>
+<?= $this->element('recent_changes', compact('recentChanges')) ?>
