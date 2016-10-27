@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2016-06-22 16:46+0200\n"
-"PO-Revision-Date: 2016-06-22 16:48+0200\n"
+"POT-Creation-Date: 2016-10-26 17:39+0200\n"
+"PO-Revision-Date: 2016-10-26 17:39+0200\n"
 "Last-Translator: \n"
 "Language-Team: EMAIL@ADDRESS\n"
 "Language: de\n"
@@ -13,48 +13,52 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 1.8.11\n"
 
-#: /Users/cleptric/Sites/cakephp-app-template//Controller/WikiPagesController.php:115;166
+#: /Users/flix/Sites/cake-wiki/src/Controller/WikiPagesController.php:115;170
 msgid "wiki_pages.page_does_not_exist"
 msgstr "Diese Seite existiert nicht mehr"
 
-#: /Users/cleptric/Sites/cakephp-app-template//Template/WikiPages/add.ctp:3
+#: /Users/flix/Sites/cake-wiki/src/Template/Element/recent_changes.ctp:6
+msgid "wiki_pages.recent_changes"
+msgstr "Letzte Änderungen"
+
+#: /Users/flix/Sites/cake-wiki/src/Template/Element/recent_changes.ctp:15
+msgid "wiki_pages.recent_changes.unknown_user"
+msgstr "Unbekannt"
+
+#: /Users/flix/Sites/cake-wiki/src/Template/WikiPages/add.ctp:3
 msgid "wiki_pages.add"
 msgstr "hinzufügen"
 
-#: /Users/cleptric/Sites/cakephp-app-template//Template/WikiPages/edit.ctp:2
+#: /Users/flix/Sites/cake-wiki/src/Template/WikiPages/edit.ctp:2
 msgid "wiki_pages.edit"
 msgstr "editieren"
 
-#: /Users/cleptric/Sites/cakephp-app-template//Template/WikiPages/form.ctp:15
+#: /Users/flix/Sites/cake-wiki/src/Template/WikiPages/form.ctp:15
 msgid "wiki_page.parent_id"
 msgstr "Übergeordnete Ebene"
 
-#: /Users/cleptric/Sites/cakephp-app-template//Template/WikiPages/form.ctp:20
+#: /Users/flix/Sites/cake-wiki/src/Template/WikiPages/form.ctp:20
 msgid "wiki_page.title"
 msgstr "Titel"
 
-#: /Users/cleptric/Sites/cakephp-app-template//Template/WikiPages/form.ctp:22
+#: /Users/flix/Sites/cake-wiki/src/Template/WikiPages/form.ctp:22
 msgid "wiki_page.attachments"
 msgstr "Anhänge"
 
-#: /Users/cleptric/Sites/cakephp-app-template//Template/WikiPages/form.ctp:25
+#: /Users/flix/Sites/cake-wiki/src/Template/WikiPages/form.ctp:25
 msgid "wiki_pages.insert_image"
 msgstr "Bild einfügen"
 
-#: /Users/cleptric/Sites/cakephp-app-template//Template/WikiPages/index.ctp:7
+#: /Users/flix/Sites/cake-wiki/src/Template/WikiPages/index.ctp:5
 msgid "wiki_pages.index"
 msgstr "Wiki"
 
-#: /Users/cleptric/Sites/cakephp-app-template//Template/WikiPages/index.ctp:17
+#: /Users/flix/Sites/cake-wiki/src/Template/WikiPages/index.ctp:15
 msgid "wiki_pages.search"
 msgstr "Suche"
 
-#: /Users/cleptric/Sites/cakephp-app-template//Template/WikiPages/index.ctp:25
+#: /Users/flix/Sites/cake-wiki/src/Template/WikiPages/index.ctp:23
 msgid "wiki_pages.nothing_found"
 msgstr "Nichts gefunden"
-
-#: /Users/cleptric/Sites/cakephp-app-template//Template/WikiPages/index.ctp:35
-msgid "wiki_pages.recent_changes"
-msgstr "Letzte Änderungen"

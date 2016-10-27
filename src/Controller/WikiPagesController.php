@@ -82,15 +82,15 @@ class WikiPagesController extends AppController
             $searchActive = true;
             $conditions = Hash::merge($this->paginate['conditions'], $conditions);
         }
-        
+
         $pageTree = $this->WikiPages->find('threaded', [
             'fields' => ['id', 'parent_id', 'title'],
-            'order' => ['sort ASC'],
+            'order' => ['title ASC'],
             'conditions' => $conditions
         ])->toArray();
 
         if (Configure::read('Wiki.useModelHistory')) {
-            $recentChanges = $this->WikiPages->getRecentChanges(15);
+            $recentChanges = $this->WikiPages->getRecentChanges();
         }
         $this->set(compact('pageTree', 'recentChanges', 'searchActive'));
     }
@@ -123,9 +123,13 @@ class WikiPagesController extends AppController
         $this->set('treePath', $treePath);
         $pageTree = $this->WikiPages->find('threaded', [
             'fields' => ['id', 'parent_id', 'title'],
-            'order' => ['sort ASC']
+            'order' => ['title ASC']
         ])->hydrate(true)->toArray();
-        $this->set(compact('pageTree'));
+
+        if (Configure::read('Wiki.useModelHistory')) {
+            $recentChanges = $this->WikiPages->getRecentChanges($id);
+        }
+        $this->set(compact('pageTree', 'recentChanges'));
     }
 
     /**

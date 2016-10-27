@@ -1,6 +1,4 @@
 <?php
-use Cake\Core\Configure;
-
 $this->assign('title', 'Wiki');
 ?>
 <h1 class="page-header">
@@ -21,7 +19,7 @@ $this->assign('title', 'Wiki');
     ]) ?>
     <?= $this->ListFilter->closeForm(false, false); ?>
 
-<?php if(empty($pageTree)) : ?>
+<?php if (empty($pageTree)) : ?>
     <div class="alert alert-info" role="alert"><?= __d('wiki', 'wiki_pages.nothing_found') ?></div>
 <?php else: ?>
     <div class="page-tree">
@@ -30,14 +28,4 @@ $this->assign('title', 'Wiki');
 <?php endif; ?>
 
 
-<?php if (Configure::read('Wiki.useModelHistory')): ?>
-    <hr>
-    <h4><?= __d('wiki', 'wiki_pages.recent_changes') ?></h4>
-    <ul>
-        <?php foreach($recentChanges as $change): ?>
-            <li>
-                <span class="label label-default"><?= $change->action ?></span> <?= $change->created ?> - <strong><?= $change->user->full_name ?></strong> in <?= $this->Html->link($change->wiki_page->title, $change->wiki_page->url) ?> 
-            </li>
-        <?php endforeach; ?>
-    </ul>
-<?php endif;  ?>
+<?= $this->element('recent_changes', compact('recentChanges')) ?>
