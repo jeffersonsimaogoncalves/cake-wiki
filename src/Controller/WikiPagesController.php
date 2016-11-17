@@ -123,7 +123,10 @@ class WikiPagesController extends AppController
         $this->set('treePath', $treePath);
         $pageTree = $this->WikiPages->find('threaded', [
             'fields' => ['id', 'parent_id', 'title'],
-            'order' => ['title ASC']
+            'order' => ['title ASC'],
+            'conditions' => [
+                'status' => WikiPage::ACTIVE
+            ]
         ])->hydrate(true)->toArray();
 
         if (Configure::read('Wiki.useModelHistory')) {
@@ -141,6 +144,7 @@ class WikiPagesController extends AppController
     {
         $wikiPage = $this->WikiPages->newEntity();
         if ($this->request->is('post')) {
+            $this->request->data['status'] = WikiPage::ACTIVE;
             $wikiPage = $this->WikiPages->patchEntity($wikiPage, $this->request->data);
             if ($this->WikiPages->save($wikiPage)) {
                 $this->Flash->success(__('forms.data_saved'));
