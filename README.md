@@ -6,15 +6,15 @@ A simple plugin for cakephp that allows creating hierarchical wiki pages.
 
 ## Requirements
 
-- [cake-attachments](https://github.com/scherersoftware/cake-attachments)  
-for managing attachments to wiki pages  
-- [cake-FrontendBridge](https://github.com/scherersoftware/cake-frontend-bridge)  
+- [cake-attachments](https://github.com/scherersoftware/cake-attachments)
+for managing attachments to wiki pages
+- [cake-FrontendBridge](https://github.com/scherersoftware/cake-frontend-bridge)
 for easy integration of further needed js libraries
-- [cake-model-history](https://github.com/scherersoftware/cake-model-history)  
+- [cake-model-history](https://github.com/scherersoftware/cake-model-history)
 for historizable wiki pages
-- [cake-cktools](https://github.com/scherersoftware/cake-cktools)  
+- [cake-cktools](https://github.com/scherersoftware/cake-cktools)
 for view elements such as the linked, hierarchical structure of the wiki
-- [bootstrap](http://getbootstrap.com/components/)  
+- [bootstrap](http://getbootstrap.com/components/)
 for icons in the page edit menu
 
 ## Installation
@@ -39,7 +39,7 @@ $ composer install
 Plugin::load('Scherersoftware/Wiki', ['bootstrap' => true, 'routes' => true]);
 ```
 
-#### 4. Create Table 'wiki-pages' in your Database  
+#### 4. Create Table 'wiki-pages' in your Database
 
 This plugin requires an additional table in your project database. Run the following SQL query to create the table.
 
@@ -58,6 +58,10 @@ CREATE TABLE `wiki_pages` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 ```
+Or run the migration like:
+
+`bin/cake migrations migrate -p Scherersoftware/Wiki`
+
 
 See `'vendor/scherersoftware/cake-wiki/config/schma.php'` and `'config/wiki_pages.sql'` for further information.
 
