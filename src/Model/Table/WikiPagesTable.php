@@ -72,6 +72,7 @@ class WikiPagesTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['parent_id'], 'ParentWikiPages'));
+
         return $rules;
     }
 
@@ -97,6 +98,7 @@ class WikiPagesTable extends Table
             }
             $parentWikiPages[$pageId] = $title;
         }
+
         return $parentWikiPages;
     }
 
@@ -131,6 +133,7 @@ class WikiPagesTable extends Table
                 'WikiPages.id' => $wikiPageId,
             ]);
         }
+
         return $q;
     }
 }

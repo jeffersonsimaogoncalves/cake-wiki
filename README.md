@@ -1,5 +1,6 @@
-# Wiki pages plugin for CakePHP 3.0
+![CakePHP 3 Websocket  Plugin](https://raw.githubusercontent.com/scherersoftware/cake-wiki/master/cake-wiki.png)
 
+[![Build Status](https://travis-ci.org/scherersoftware/cake-wiki.svg?branch=master)](https://travis-ci.org/scherersoftware/cake-wiki)
 [![License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.txt)
 
 A simple plugin for cakephp that allows creating hierarchical wiki pages.

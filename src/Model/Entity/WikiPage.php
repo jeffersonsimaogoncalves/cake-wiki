@@ -35,7 +35,7 @@ class WikiPage extends Entity
     /**
      * Getter for URL virtual field
      *
-     * @return void
+     * @return string
      */
     protected function _getUrl()
     {

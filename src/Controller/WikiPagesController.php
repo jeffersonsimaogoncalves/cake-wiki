@@ -36,6 +36,7 @@ class WikiPagesController extends AppController
                 ]
             ];
         }
+
         return $filters;
     }
 
@@ -61,6 +62,7 @@ class WikiPagesController extends AppController
         $userId = $this->Auth->user('id');
         if (Configure::read('Wiki.useModelHistory')) {
             $this->WikiPages->setModelHistoryUserIdCallback(function () use ($userId) {
+
                 return $userId;
             });
         }
@@ -99,7 +101,7 @@ class WikiPagesController extends AppController
      * View method
      *
      * @param string|null $id Wiki Page id.
-     * @return void
+     * @return mixed
      * @throws \Cake\Network\Exception\NotFoundException When record not found.
      */
     public function view($id = null)
@@ -113,6 +115,7 @@ class WikiPagesController extends AppController
 
         if ($wikiPage->status == WikiPage::DELETED) {
             $this->Flash->warning(__d('wiki', 'wiki_pages.page_does_not_exist'));
+
             return $this->redirect(['action' => 'index']);
         }
 
@@ -138,7 +141,7 @@ class WikiPagesController extends AppController
     /**
      * Add method
      *
-     * @return void Redirects on successful add, renders view otherwise.
+     * @return mixed Redirects on successful add, renders view otherwise.
      */
     public function add()
     {
@@ -148,6 +151,7 @@ class WikiPagesController extends AppController
             $wikiPage = $this->WikiPages->patchEntity($wikiPage, $this->request->data);
             if ($this->WikiPages->save($wikiPage)) {
                 $this->Flash->success(__('forms.data_saved'));
+
                 return $this->redirect(['action' => 'edit', $wikiPage->id]);
             } else {
                 $this->Flash->error(__('forms.data_not_saved'));
@@ -161,7 +165,7 @@ class WikiPagesController extends AppController
      * Edit method
      *
      * @param string|null $id Wiki Page id.
-     * @return void Redirects on successful edit, renders view otherwise.
+     * @return mixed Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Network\Exception\NotFoundException When record not found.
      */
     public function edit($id = null)
@@ -172,6 +176,7 @@ class WikiPagesController extends AppController
 
         if ($wikiPage->status == WikiPage::DELETED) {
             $this->Flash->warning(__d('wiki', 'wiki_pages.page_does_not_exist'));
+
             return $this->redirect(['action' => 'index']);
         }
 
@@ -179,6 +184,7 @@ class WikiPagesController extends AppController
             $wikiPage = $this->WikiPages->patchEntity($wikiPage, $this->request->data);
             if ($this->WikiPages->save($wikiPage)) {
                 $this->Flash->success(__('forms.data_saved'));
+
                 return $this->redirect(['action' => 'edit', $id]);
             } else {
                 $this->Flash->success(__('forms.data_not_saved'));
@@ -192,7 +198,7 @@ class WikiPagesController extends AppController
      * Delete method
      *
      * @param string|null $id Wiki Page id.
-     * @return void Redirects to index.
+     * @return redirect Redirects to index.
      * @throws \Cake\Network\Exception\NotFoundException When record not found.
      */
     public function delete($id = null)
@@ -205,6 +211,7 @@ class WikiPagesController extends AppController
         } else {
             $this->Flash->error(__('forms.data_not_deleted'));
         }
+
         return $this->redirect(['action' => 'index']);
     }
 }
