@@ -10,7 +10,9 @@
         "codekanzlei/cake-attachments": "*",
         "codekanzlei/cake-model-history": "*",
         "michelf/php-markdown": "^1.5",
-        "cakephp/migrations": "~1.0"
+        "cakephp/migrations": "~1.0",
+        "codekanzlei/cake-cktools": "^1.2",
+        "codekanzlei/cake-list-filter": "1.*"
     },
     "autoload": {
         "psr-4": {
